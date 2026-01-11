@@ -28,6 +28,15 @@
       border-radius: 8px;
       color: white;
     }
+
+    #ui input {
+      background: #222;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 4px 6px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -63,7 +72,7 @@ const foodCanvas = document.createElement("canvas");
 const foodCtx = foodCanvas.getContext("2d");
 
 let food = [];
-let cols, rows;
+let cols = 0, rows = 0;
 const scale = 4;
 
 
@@ -72,6 +81,7 @@ const scale = 4;
 ================================ */
 function loadImage(src) {
   const img = new Image();
+  img.crossOrigin = "anonymous"; // prevent CORS issues on GitHub Pages
   img.onload = () => buildFood(img);
   img.src = src;
 }
@@ -82,11 +92,7 @@ function buildFood(img) {
 
   foodCtx.drawImage(img, 0, 0, foodCanvas.width, foodCanvas.height);
 
-  const data = foodCtx.getImageData(
-    0, 0,
-    foodCanvas.width,
-    foodCanvas.height
-  ).data;
+  const data = foodCtx.getImageData(0, 0, foodCanvas.width, foodCanvas.height).data;
 
   cols = foodCanvas.width;
   rows = foodCanvas.height;
@@ -100,6 +106,7 @@ function buildFood(img) {
   }
 
   initAgents();
+  requestAnimationFrame(loop); // start animation pas als image klaar is
 }
 
 
@@ -131,7 +138,7 @@ const stepSize = 0.7;
 
 
 /* ===============================
-   LOOP
+   MAIN LOOP
 ================================ */
 function loop() {
   ctx.fillStyle = "rgba(0,0,0,0.15)";
@@ -190,7 +197,7 @@ function loop() {
 
 
 /* ===============================
-   IMAGE UPLOAD
+   IMAGE UPLOAD HANDLER
 ================================ */
 document.querySelector("input").addEventListener("change", e => {
   const file = e.target.files[0];
@@ -203,10 +210,9 @@ document.querySelector("input").addEventListener("change", e => {
 
 
 /* ===============================
-   START WITH DEFAULT IMAGE
+   START DEFAULT IMAGE
 ================================ */
-loadImage("mushroom.png");
-loop();
+loadImage("mushroom.png"); // zet mushroom.png in root van je repo
 </script>
 
 </body>
