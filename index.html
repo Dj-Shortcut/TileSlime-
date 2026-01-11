@@ -64,7 +64,6 @@ function resize() {
 resize();
 window.addEventListener("resize", resize);
 
-
 /* ===============================
    FOOD MAP
 ================================ */
@@ -75,13 +74,12 @@ let food = [];
 let cols = 0, rows = 0;
 const scale = 4;
 
-
 /* ===============================
    LOAD IMAGE → FOOD
 ================================ */
 function loadImage(src) {
   const img = new Image();
-  img.crossOrigin = "anonymous"; // prevent CORS issues on GitHub Pages
+  img.crossOrigin = "anonymous"; 
   img.onload = () => buildFood(img);
   img.src = src;
 }
@@ -109,7 +107,6 @@ function buildFood(img) {
   requestAnimationFrame(loop); // start animation pas als image klaar is
 }
 
-
 /* ===============================
    SLIME AGENTS
 ================================ */
@@ -127,7 +124,6 @@ function initAgents() {
   }
 }
 
-
 /* ===============================
    PARAMETERS
 ================================ */
@@ -135,7 +131,6 @@ const senseDist = 4;
 const senseAngle = 0.5;
 const turnSpeed = 0.3;
 const stepSize = 0.7;
-
 
 /* ===============================
    MAIN LOOP
@@ -195,7 +190,6 @@ function loop() {
   requestAnimationFrame(loop);
 }
 
-
 /* ===============================
    IMAGE UPLOAD HANDLER
 ================================ */
@@ -208,11 +202,10 @@ document.querySelector("input").addEventListener("change", e => {
   reader.readAsDataURL(file);
 });
 
-
 /* ===============================
    START DEFAULT IMAGE
 ================================ */
-loadImage("mushroom.png"); // zet mushroom.png in root van je repo
+loadImage("mushroom.png"); // mushroom.png in root van je repo
 </script>
 
 </body>
