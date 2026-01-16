@@ -36,53 +36,54 @@ canvas { display:block; }
 
   <!-- SHADCN-STYLE ICON BUTTON (INLINE) -->
   <label for="ghost-button"
-    title="Upload image"
-    style="
-      width:88px;
-      height:88px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+  title="Upload image"
+  style="
+    width:88px;
+    height:88px;
 
-      border-radius:12px;
-      background:rgba(20,20,20,0.6);
-      border:1px solid rgba(255,255,255,0.18);
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-      color:#e5e7eb;
-      cursor:pointer;
-      user-select:none;
+    border-radius:18px;
 
-      box-shadow:
-        0 10px 30px rgba(0,0,0,0.45),
-        inset 0 1px 0 rgba(255,255,255,0.05);
+    background:rgba(20,20,20,0.6);
+    border:1px solid rgba(255,255,255,0.18);
 
-      backdrop-filter:blur(6px);
+    color:#e5e7eb;
+    cursor:pointer;
+    user-select:none;
 
-      transition:
-        background-color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.1s ease,
-        box-shadow 0.2s ease;
-    "
-    onmouseenter="this.style.background='rgba(35,35,35,0.8)';this.style.borderColor='rgba(255,255,255,0.28)'"
-    onmouseleave="this.style.background='rgba(20,20,20,0.6)';this.style.borderColor='rgba(255,255,255,0.18)'"
-    onmousedown="this.style.transform='scale(0.96)'"
-    onmouseup="this.style.transform='scale(1)'"
+    box-shadow:
+      0 14px 40px rgba(0,0,0,0.5),
+      inset 0 1px 0 rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(6px);
+
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.1s ease,
+      box-shadow 0.2s ease;
+  "
+  onmouseenter="this.style.background='rgba(35,35,35,0.8)';this.style.borderColor='rgba(255,255,255,0.28)'"
+  onmouseleave="this.style.background='rgba(20,20,20,0.6)';this.style.borderColor='rgba(255,255,255,0.18)'"
+  onmousedown="this.style.transform='scale(0.96)'"
+  onmouseup="this.style.transform='scale(1)'"
+>
+  <svg
+    width="36" height="36" viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    style="opacity:0.9;"
   >
-    <!-- lucide-style upload icon -->
-    <svg
-      width="36" height="36" viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      style="opacity:0.9;"
-    >
-      <path d="M12 19V5"/>
-      <path d="M5 12l7-7 7 7"/>
-      <path d="M5 19h14"/>
-    </svg>
+    <path d="M12 19V5"/>
+    <path d="M5 12l7-7 7 7"/>
+    <path d="M5 19h14"/>
+  </svg>
   </label>
 </div>
 
